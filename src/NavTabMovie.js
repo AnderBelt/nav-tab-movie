@@ -75,7 +75,6 @@ export class NavTabMovie extends LitElement {
 
   _setProperties(data) {
     this.dataList = data;
-    console.log(this.dataList[0]);
   }
 
   // Define a template
@@ -85,7 +84,7 @@ export class NavTabMovie extends LitElement {
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <button class="nav-item nav-link ${this.activedTab[0]}" id="nav-review-tab" data-toggle="tab" href="#nav-review" role="tab" aria-controls="nav-review" @click=${this._activeReview}>Review</button>
           <button class="nav-item nav-link ${this.activedTab[1]}" id="nav-actors-tab" data-toggle="tab" href="#nav-actors" role="tab" aria-controls="nav-actors" @click=${this._activeActors}>Actors</button>
-          <button class="nav-item nav-link ${this.activedTab[2]}" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" @click=${this._activeContact}>Contact</button>
+          <button class="nav-item nav-link disabled" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" @click=${this._activeContact}>Contact</button>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
@@ -95,7 +94,7 @@ export class NavTabMovie extends LitElement {
         <div class="tab-pane fade ${this.activedContent[1]}" id="nav-actors" role="tabpanel" aria-labelledby="nav-actors-tab">
             <list-actor-card .dataList=${this.dataList[1].data} ></list-actor-card>
           </div>
-        <div class="tab-pane fade ${this.activedContent[2]}" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Data de Contact</div>
+        <div class="tab-pane fade disabled" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Data de Contact</div>
       </div>
     `;
   }
