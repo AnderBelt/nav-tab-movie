@@ -35,8 +35,8 @@ export class NavTabMovie extends LitElement {
   // Initialize properties
   constructor() {
     super();
-    this.activedTab = ['active','',''];
-    this.activedContent = ['show active','','']
+    this.activedTab = ['','active',''];
+    this.activedContent = ['','show active','']
   }
 
   static get styles() {
